@@ -56,7 +56,7 @@ const MovieListElement = ({ movie }) => {
       <Poster url={posterUrl} oneError="https://ru.stackoverflow.com/" />
       <Title>{title} </Title>
       {year && <Year>{year}</Year>}
-      {genres.length && <GenresWrapper>{genres.join(", ")}</GenresWrapper>}
+      {genres.length ? <GenresWrapper>{genres.join(", ")}</GenresWrapper> : ''}
       {director && <Director>Director: {director}</Director>}
       {runtime && <Runtime>Runtime: {renderTimeString(runtime)}</Runtime>}
     </Wrapper>

@@ -1,24 +1,24 @@
 import React from "react";
 import history from "../history";
-import Button from './common/Button'
+import styled from "styled-components";
+import Button from "./common/Button";
+
+const Wrapper = styled.div`
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: scale(1) translate(-50%, -50%);
+`;
 
 const Page404 = () => {
   return (
-    <div
-      style={{
-        width: "50%",
-        height: "50%",
-        position: "absolute",
-        textAlign: "center",
-        top: "50%",
-        left: "50%",
-        transform: "scale(1) translate(-50%, -50%)"
-      }}
-    >
+    <Wrapper>
       <h1>404</h1>
-      {/* <h3>Запрашиваемая страница не найдена</h3> */}
       <Button onClick={() => history.goBack()}>Back</Button>
-    </div>
+    </Wrapper>
   );
 };
 

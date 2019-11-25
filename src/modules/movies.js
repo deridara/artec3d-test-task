@@ -62,7 +62,6 @@ export default (state = initialState, { type, payload }) => {
       };
     case EDIT_MOVIE:
       const { movieInfo, id } = payload;
-      console.log({movieInfo, id})
       return {
         ...state,
         data: { ...state.data, [id]: { id, ...movieInfo } }

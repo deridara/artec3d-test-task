@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams, useLocation } from "react-router-dom";
 import { loadMovies } from "../modules/movies";
 import { renderTimeString } from "../utils";
-import history from '../history'
+import history from "../history";
 import TextStub from "./common/TextStub";
 import ButtonTemplate from "./common/Button";
 
@@ -58,10 +58,13 @@ const Plot = styled.div`
   margin-bottom: 0.5em;
 `;
 
+const ErrorText = styled.div`
+  margin-bottom: 1em;
+`;
+
 const MovieCard = props => {
   const [movie, setMovie] = useState({});
   const [error, setError] = useState("");
-  const [loadingStatus, setLoadingStatus] = useState(false);
   const movies = useSelector(state => state.movies.data);
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -81,7 +84,7 @@ const MovieCard = props => {
   }
 
   const onEditButtonClick = () => history.push("/edit/" + id);
-  
+
   const renderCard = movie => {
     const {
       title,
@@ -101,7 +104,11 @@ const MovieCard = props => {
         <Poster url={posterUrl} />
         <Title>{title}</Title>
         {year && <Year>{year}</Year>}
-        {genres.length && <GenresWrapper>{genres.join(", ")}</GenresWrapper>}
+        {genres.length ? (
+          <GenresWrapper>{genres.join(", ")}</GenresWrapper>
+        ) : (
+          ""
+        )}
         {runtime && <Runtime>Runtime: {renderTimeString(runtime)}</Runtime>}
         {director && <Director>Director: {director}</Director>}
         {actors && <ActorsWrapper>Actors: {actors}</ActorsWrapper>}
@@ -114,7 +121,12 @@ const MovieCard = props => {
   return (
     <Wrapper>
       {error ? (
-        <TextStub>{error}</TextStub>
+        <TextStub>
+          <ErrorText>{error}</ErrorText>
+          <BackButton onClick={() => history.push("/")}>
+            ⟵ Back to All Movies
+          </BackButton>
+        </TextStub>
       ) : Object.keys(movie).length ? (
         renderCard(movie)
       ) : (

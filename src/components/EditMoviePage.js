@@ -54,6 +54,7 @@ const Error = styled.div`
   bottom: 0;
   width: 100px;
 `;
+
 const EditMoviePage = () => {
   const movies = useSelector(state => state.movies.data);
   const dispatch = useDispatch();
@@ -62,19 +63,6 @@ const EditMoviePage = () => {
   const [movie, setMovie] = useState({});
   const [error, setError] = useState("");
   const [validationError, setValidationError] = useState(false);
-
-  /*
-  const [title, setTitle] = useState("");
-  const [year, setYear] = useState("");
-  const [runtime, setRuntime] = useState("");
-  const [genres, setGenres] = useState("");
-  const [director, setDirector] = useState("");
-  const [posterUrl, setPosterUrl] = useState("");
-  const [actors, setActors] = useState("");
-  const [plot, setPlot] = useState("");
-  */
-
-  const [loadingStatus, setLoadingStatus] = useState(false);
 
   const [formData, setFormData] = useState({
     title: "",
@@ -129,16 +117,6 @@ const EditMoviePage = () => {
   };
 
   const renderForm = () => {
-    /* const {
-      title,
-      year,
-      runtime,
-      genres,
-      director,
-      posterUrl,
-      actors,
-      plot
-    } = movie; */
     return (
       <React.Fragment>
         <Label>
@@ -227,7 +205,6 @@ const EditMoviePage = () => {
   };
 
   const onSaveEditedMovie = () => {
-      console.log({formData})
     if (fieldsIsValid(formData)) {
       dispatch(editMovie(formData, movieId));
       history.push(`/${movieId}`);

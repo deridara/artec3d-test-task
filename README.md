@@ -1,7 +1,10 @@
 # artec3d-test-task
 
 Start in developer mode:
-```npm start```
+```
+npm install
+npm start
+```
 
 The project will be accessible via [http://localhost:3000](http://localhost:3000)
 

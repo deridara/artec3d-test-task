@@ -162,7 +162,7 @@ const EditMoviePage = () => {
         <Label>
           Runtime:
           <Input
-            type="text"
+            type="number"
             name="runtime"
             value={formData.runtime}
             onChange={({ target }) => onFormItemChange(target)}

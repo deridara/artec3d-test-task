@@ -1,0 +1,37 @@
+{
+  "name": "artec3d-test-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "/",
+  "scripts": {
+    "start": "webpack-dev-server --mode=development --watch",
+    "test": "test",
+    "build": "webpack --config webpack.config.js --mode=production"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connected-react-router": "^6.6.0",
+    "history": "^4.10.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}

@@ -3,6 +3,6 @@
 Start in developer mode:
 ```npm start```
 
-Project will open on port 3000.
+The project will be accessible via [http://localhost:3000](http://localhost:3000)
 
-Doesn't work from file system.
+Doesn't work from the file system.

@@ -1,4 +1,4 @@
-# artec3d-tes-task
+# artec3d-test-task
 
 Start in developer mode:
 ```npm start```

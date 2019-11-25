@@ -6,7 +6,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     publicPath: "/"
   },
   module: {
@@ -43,5 +43,5 @@ module.exports = {
     ]
   },
 
-  devServer: { contentBase: "./dist", port: 3000, historyApiFallback: true }
+  devServer: { contentBase: "./docs", port: 3000, historyApiFallback: true }
 };

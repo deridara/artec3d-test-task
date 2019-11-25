@@ -151,7 +151,7 @@ const EditMoviePage = () => {
           />
         </Label>
         <Label>
-          Genres
+          Genres:
           <Input
             type="text"
             name="genres"
